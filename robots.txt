@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://wily-2024.github.io/runner-landing/sitemap.xml
