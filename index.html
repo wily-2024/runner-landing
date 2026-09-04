@@ -240,8 +240,8 @@
   .operations-list li::before{content:"✓"; position:absolute; left:16px; top:15px; color:var(--turquoise-soft); font-family:var(--font-mono); font-weight:700;}
   .operations-actions{display:flex; align-items:center; gap:15px; flex-wrap:wrap;}
   .operations-note{font-family:var(--font-mono); font-size:11.5px; color:var(--text-soft); max-width:42ch;}
-  .management-visual{position:relative; border:1px solid rgba(228,190,124,.24); border-radius:10px; overflow:hidden; background:#111; box-shadow:0 30px 80px -36px rgba(0,0,0,.9);}
-  .management-visual img{width:100%; aspect-ratio:1/1; object-fit:cover;}
+  .management-visual{position:relative; width:min(100%,520px); aspect-ratio:2/3; max-height:740px; margin-inline:auto; border:1px solid rgba(228,190,124,.24); border-radius:10px; overflow:hidden; background:#111; box-shadow:0 30px 80px -36px rgba(0,0,0,.9);}
+  .management-visual img{width:100%; height:100%; object-fit:cover;}
   .management-visual::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,rgba(10,15,22,.06) 52%,rgba(10,15,22,.88) 100%); pointer-events:none;}
   .management-caption{position:absolute; z-index:2; left:20px; right:20px; bottom:18px;}
   .management-caption strong{display:block; color:var(--text-strong); font-size:15px; margin-bottom:8px;}
@@ -318,6 +318,22 @@
   .wa-float svg{width:30px; height:30px;}
   .wa-float .ring{position:absolute; inset:0; border-radius:50%; border:2px solid #25D366; animation:pulse-ring 2.2s ease-out infinite;}
   @keyframes pulse-ring{0%{transform:scale(1); opacity:.7;}100%{transform:scale(1.7); opacity:0;}}
+
+  /* ---------- BACKGROUND MUSIC ---------- */
+  .music-control{
+    position:fixed; right:22px; bottom:94px; z-index:70;
+    min-height:42px; display:flex; align-items:center; gap:9px;
+    padding:9px 13px; border:1px solid var(--line); border-radius:22px;
+    background:rgba(29,42,56,.94); color:var(--text-strong);
+    font-family:var(--font-mono); font-size:11px; cursor:pointer;
+    box-shadow:0 10px 28px -12px rgba(0,0,0,.65);
+    backdrop-filter:blur(9px); transition:border-color .2s, transform .2s;
+  }
+  .music-control:hover{border-color:var(--gold-soft); transform:translateY(-1px);}
+  .music-control .music-icon{width:24px; height:24px; border-radius:50%; display:grid; place-items:center; background:rgba(203,154,69,.14); color:var(--gold-soft); font-size:14px;}
+  .music-control.is-playing .music-icon{animation:music-pulse 1.8s ease-in-out infinite;}
+  @keyframes music-pulse{0%,100%{box-shadow:0 0 0 0 rgba(203,154,69,.35)}50%{box-shadow:0 0 0 7px rgba(203,154,69,0)}}
+  @media (max-width:640px){.music-control{right:14px; bottom:88px;}.music-control .music-label{display:none;}}
 
   /* ---------- FLOATING QR ---------- */
   .qr-float{position:fixed; left:22px; bottom:22px; z-index:70; display:flex; align-items:center; gap:10px; background:var(--ink-2); border:1px solid var(--line); border-radius:10px; padding:8px 14px 8px 8px; box-shadow:0 10px 26px -10px rgba(0,0,0,.55); transition:border-color .2s, transform .2s;}
@@ -487,7 +503,7 @@ Aquí un caso real: https://wily-2024.github.io/serenitysprings-lima/
       </div>
       <div class="reveal">
         <figure class="management-visual">
-          <img src="assets/runner-gestion-automatizada.webp" alt="Sistema central de gestión con agenda, clientes, equipo, pagos y reportes para negocios por cita" width="1254" height="1254" loading="lazy">
+          <img src="assets/runner-gestion-automatizada.webp" alt="Especialista de medicina estética gestionando citas, clientes, tratamientos y resultados desde una plataforma digital" width="733" height="1100" loading="lazy">
           <figcaption class="management-caption">
             <strong>Gestiona tu negocio de forma más inteligente</strong>
             <span>CITAS · PERSONAL · CLIENTES · PAGOS · REPORTES</span>
@@ -621,6 +637,12 @@ Aquí un caso real: https://wily-2024.github.io/serenitysprings-lima/
   </div>
 </footer>
 
+<audio id="runnerMusic" src="assets/runner-ambiente.mp3" autoplay loop preload="metadata"></audio>
+<button class="music-control" id="musicControl" type="button" aria-pressed="false" aria-label="Activar música de fondo">
+  <span class="music-icon" aria-hidden="true">♫</span>
+  <span class="music-label" id="musicLabel">Activar música</span>
+</button>
+
 <a class="wa-float" href="https://wa.me/51936554768?text=Hola%20Runner%2C%20quiero%20mejorar%20la%20captaci%C3%B3n%20y%20gesti%C3%B3n%20de%20mi%20negocio." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
   <span class="ring"></span>
   <svg viewBox="0 0 32 32" fill="#fff"><path d="M16 2C8.3 2 2 8.3 2 16c0 2.8.8 5.5 2.3 7.8L2 30l6.4-2.3c2.2 1.3 4.8 2 7.6 2 7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.5c-2.4 0-4.7-.7-6.6-1.9l-.5-.3-4.2 1.5 1.5-4.1-.3-.5C4.6 20.4 4 18.2 4 16 4 9.4 9.4 4 16 4s12 5.4 12 12-5.4 11.5-12 11.5zm6.6-8.7c-.4-.2-2.1-1-2.4-1.2-.3-.1-.5-.2-.8.2-.2.3-.9 1.2-1.1 1.4-.2.2-.4.3-.7.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.7.2-.2.4-.4.6-.7.2-.2.3-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.3 3.4 1.4 3.6c.2.2 2.6 4 6.2 5.5.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.6-.4z"/></svg>
@@ -679,6 +701,53 @@ Aquí un caso real: https://wily-2024.github.io/serenitysprings-lima/
   } else {
     reveals.forEach(el => el.classList.add('is-visible'));
   }
+
+  // Background music: autoplay when permitted; otherwise starts after the
+  // visitor's first interaction. The visible control always preserves choice.
+  const runnerMusic = document.getElementById('runnerMusic');
+  const musicControl = document.getElementById('musicControl');
+  const musicLabel = document.getElementById('musicLabel');
+  let musicPausedByVisitor = false;
+  runnerMusic.volume = 0.16;
+
+  const updateMusicControl = () => {
+    const playing = !runnerMusic.paused;
+    musicControl.classList.toggle('is-playing', playing);
+    musicControl.setAttribute('aria-pressed', String(playing));
+    musicControl.setAttribute('aria-label', playing ? 'Pausar música de fondo' : 'Activar música de fondo');
+    musicLabel.textContent = playing ? 'Pausar música' : 'Activar música';
+  };
+
+  const startMusic = async () => {
+    try {
+      await runnerMusic.play();
+    } catch (error) {
+      // Some browsers require a user gesture before allowing sound.
+    }
+    updateMusicControl();
+  };
+
+  window.addEventListener('load', startMusic, {once:true});
+  const unlockMusic = (event) => {
+    if (event.target.closest && event.target.closest('#musicControl')) return;
+    if (!musicPausedByVisitor && runnerMusic.paused) startMusic();
+  };
+  window.addEventListener('pointerdown', unlockMusic, {once:true});
+  window.addEventListener('keydown', unlockMusic, {once:true});
+
+  musicControl.addEventListener('click', () => {
+    if (runnerMusic.paused) {
+      musicPausedByVisitor = false;
+      startMusic();
+    } else {
+      musicPausedByVisitor = true;
+      runnerMusic.pause();
+      updateMusicControl();
+    }
+  });
+  runnerMusic.addEventListener('play', updateMusicControl);
+  runnerMusic.addEventListener('pause', updateMusicControl);
+  updateMusicControl();
 </script>
 
 </body>
