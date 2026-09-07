@@ -272,6 +272,7 @@
   .demo-badge::before{content:"●"; font-size:8px;}
   .demo-shell{display:grid; grid-template-columns:0.85fr 1.15fr; gap:28px; align-items:start; margin-top:12px;}
   @media (max-width:960px){.demo-shell{grid-template-columns:1fr;}}
+  .demo-right-column{display:grid; gap:20px; min-width:0;}
   .demo-panel{background:var(--ink); border:1px solid var(--line); border-radius:8px; padding:24px;}
   .demo-panel h3{font-size:19px; margin-bottom:6px; font-family:var(--font-body); font-weight:700; color:var(--text-strong);}
   .demo-panel .demo-help{font-size:12.5px; color:var(--text-soft); margin-bottom:18px; line-height:1.5;}
@@ -311,10 +312,19 @@
   .demo-toast{margin-top:14px; padding:10px 14px; border-radius:6px; background:rgba(63,147,132,.14); border:1px solid rgba(63,147,132,.5); color:var(--turquoise-soft); font-size:12.5px; display:none;}
   .demo-toast.show{display:block;}
   .demo-reset{margin-top:16px; display:flex; justify-content:flex-end;}
+  .demo-bridge-visual{position:relative; min-height:230px; aspect-ratio:16/9; overflow:hidden; border:1px solid rgba(63,147,132,.35); border-radius:8px; background:#081523; box-shadow:0 22px 48px -32px rgba(0,0,0,.9);}
+  .demo-bridge-visual img{width:100%; height:100%; object-fit:cover; object-position:center;}
+  .demo-bridge-visual::after{content:""; position:absolute; inset:0; background:linear-gradient(180deg,transparent 54%,rgba(8,21,35,.88) 100%); pointer-events:none;}
+  .demo-bridge-caption{position:absolute; z-index:2; left:18px; right:18px; bottom:14px; display:flex; align-items:flex-end; justify-content:space-between; gap:16px;}
+  .demo-bridge-caption strong{color:#fff; font-size:14px; line-height:1.3;}
+  .demo-bridge-caption span{font-family:var(--font-mono); color:var(--turquoise-soft); font-size:10px; letter-spacing:.08em; text-align:right;}
   @media (max-width:760px){
     .demo-row2{grid-template-columns:1fr;}
     .demo-appt{grid-template-columns:1fr; gap:8px; padding:16px 4px;}
     .demo-appt .actions{display:flex; gap:10px; align-items:center; flex-wrap:wrap;}
+    .demo-bridge-visual{min-height:0;}
+    .demo-bridge-caption{left:14px; right:14px; bottom:12px;}
+    .demo-bridge-caption span{display:none;}
   }
 
   /* ---------- SECTORES ---------- */
@@ -719,16 +729,26 @@
           </form>
         </div>
 
-        <div class="demo-panel reveal">
-          <div class="demo-agenda-top">
-            <h3>Agenda del día</h3>
+        <div class="demo-right-column">
+          <div class="demo-panel reveal">
+            <div class="demo-agenda-top">
+              <h3>Agenda del día</h3>
+            </div>
+            <div class="demo-summary" id="demoSummary"></div>
+            <div class="demo-table" id="demoAgendaBody"></div>
+            <div class="demo-toast" id="demoToast" role="status" aria-live="polite"></div>
+            <div class="demo-reset">
+              <button type="button" class="btn btn-ghost btn-sm" id="demoResetBtn">Reiniciar demostración</button>
+            </div>
           </div>
-          <div class="demo-summary" id="demoSummary"></div>
-          <div class="demo-table" id="demoAgendaBody"></div>
-          <div class="demo-toast" id="demoToast" role="status" aria-live="polite"></div>
-          <div class="demo-reset">
-            <button type="button" class="btn btn-ghost btn-sm" id="demoResetBtn">Reiniciar demostración</button>
-          </div>
+
+          <figure class="demo-bridge-visual reveal">
+            <img src="assets/runner-crm-qr-whatsapp.webp" alt="Emprendedora coordinando citas mediante código QR, hoja de cálculo y WhatsApp" width="1600" height="895" loading="lazy" decoding="async">
+            <figcaption class="demo-bridge-caption">
+              <strong>De la consulta a una agenda más ordenada.</strong>
+              <span>QR · WHATSAPP · CRM</span>
+            </figcaption>
+          </figure>
         </div>
       </div>
 

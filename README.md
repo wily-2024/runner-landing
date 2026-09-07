@@ -30,6 +30,7 @@ Sitio comercial de Runner para negocios de belleza, estética, bienestar y otros
 - `assets/runner-hero-profesional.webp` y versión `-4k` — portada profesional optimizada.
 - `assets/runner-peluqueria.webp`, `runner-maquillaje.webp` y `runner-spa-bienestar.webp` — fotografías propias para las especialidades, cada una con versión 4K.
 - `assets/runner-gestion-profesional.webp` y versión `-4k` — fotografía de gestión para el bloque del CRM.
+- `assets/runner-crm-qr-whatsapp.webp` — apoyo visual dentro de la demostración, entre el registro de una cita y la agenda.
 - `assets/runner-og.jpg` — imagen social 1200 × 630 para Open Graph y redes.
 - `Runner_Hero_QR_Animado_Web.webp` — recurso animado conservado como material alternativo.
 - `assets/runner-gestion-automatizada.webp` — recurso anterior conservado como respaldo.
