@@ -50,7 +50,7 @@
     {"@type":"Question","name":"¿El CRM de Runner es completamente automático?","acceptedAnswer":{"@type":"Answer","text":"No. Es un sistema práctico y semiautomático hecho principalmente con Google Sheets. Organiza clientes, citas y alertas de cruce, pero las confirmaciones y el envío de mensajes los realiza la persona encargada del negocio."}},
     {"@type":"Question","name":"¿Necesito WhatsApp Business API?","acceptedAnswer":{"@type":"Answer","text":"No. Runner funciona con WhatsApp normal o WhatsApp Business mediante enlaces wa.me. El sistema prepara el mensaje y abre WhatsApp; la persona encargada revisa y presiona enviar."}},
     {"@type":"Question","name":"¿Puedo usar mi WhatsApp normal?","acceptedAnswer":{"@type":"Answer","text":"Sí. No se requiere ninguna aplicación especial ni número dedicado; funciona con la app de WhatsApp que ya usas."}},
-    {"@type":"Question","name":"¿Esta landing registra automáticamente los prospectos en el CRM?","acceptedAnswer":{"@type":"Answer","text":"Sí. El formulario de diagnóstico de Runner registra tu solicitud en el CRM de Google Sheets con tu consentimiento, antes de abrir WhatsApp con el mismo código RUN. Debes revisar el mensaje y presionar Enviar manualmente. El registro de un prospecto no confirma ni reserva una cita; esas acciones las realiza la persona encargada."}},
+    {"@type":"Question","name":"¿La landing registra automáticamente las citas en el CRM?","acceptedAnswer":{"@type":"Answer","text":"No en la versión básica. La landing prepara la consulta y la persona encargada registra o confirma la cita. Una integración adicional solo se ofrece después de revisar el flujo y cotizarla por separado."}},
     {"@type":"Question","name":"¿Cuánto cuesta una solución Runner?","acceptedAnswer":{"@type":"Answer","text":"Landing Esencial desde S/390, Landing Profesional desde S/790 y Landing + CRM Runner desde S/1,490. Los precios son referenciales y el alcance se confirma antes de comenzar."}},
     {"@type":"Question","name":"¿Runner sustituye una historia clínica o un sistema médico?","acceptedAnswer":{"@type":"Answer","text":"No. Para consultorios, Runner organiza la agenda y el seguimiento administrativo, pero no reemplaza una historia clínica ni un sistema médico especializado."}}
   ]
@@ -419,12 +419,6 @@
   .diagnostic-consent{display:flex !important; grid-template-columns:auto 1fr; align-items:flex-start; gap:9px !important; text-transform:none !important; letter-spacing:0 !important; color:var(--text-soft) !important; font-family:var(--font-body) !important; font-size:12px !important;}
   .diagnostic-consent input{width:16px; height:16px; padding:0; margin-top:2px; accent-color:var(--gold);}
   .diagnostic-form .btn{width:100%; justify-content:center; border:none;}
-  .diagnostic-status{display:none; padding:10px 12px; border:1px solid var(--line); border-radius:5px; font-size:12.5px; line-height:1.45;}
-  .diagnostic-status.show{display:block;}
-  .diagnostic-status.ok{color:var(--turquoise-soft); border-color:var(--turquoise);}
-  .diagnostic-status.error{color:var(--terracotta-soft); border-color:var(--terracotta);}
-  .diagnostic-form .btn:disabled{opacity:.65; cursor:default; transform:none; box-shadow:none;}
-  #diagnosticWhatsApp[hidden]{display:none;}
   .diagnostic-note{font-size:11.5px; color:var(--text-soft); line-height:1.5;}
   .foot-bottom{display:flex; justify-content:space-between; align-items:center; padding-top:28px; flex-wrap:wrap; gap:14px;}
   .foot-bottom p{font-family:var(--font-mono); font-size:12px; color:var(--text-soft);}
@@ -484,7 +478,7 @@
       <a href="#demo-crm">Demo</a>
       <a href="#tramos">Precios</a>
       <a href="#preguntas">Preguntas</a>
-      <a href="#diagnosticForm" class="btn btn-primary header-cta" data-capture-cta="Menú: WhatsApp">WhatsApp →</a>
+      <a href="https://wa.me/51936554768?text=Hola%20Runner%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n%20sobre%20sus%20soluciones%20para%20mi%20negocio." class="btn btn-primary header-cta">WhatsApp →</a>
     </nav>
   </div>
 </header>
@@ -499,7 +493,7 @@
         <h1>Más reservas, <em>menos citas perdidas</em> y todo tu negocio organizado.</h1>
         <p class="lede">Creamos landing pages y sistemas de gestión semiautomáticos que conectan tus servicios, WhatsApp, clientes, citas y seguimientos en una solución adaptada a tu negocio.</p>
         <div class="hero-ctas">
-          <a href="#diagnosticForm" class="btn btn-primary" data-capture-cta="Portada: diagnóstico gratuito">Solicitar diagnóstico gratuito →</a>
+          <a href="https://wa.me/51936554768?text=Hola%20Runner%2C%20quiero%20un%20diagn%C3%B3stico%20gratuito%20para%20mi%20negocio." class="btn btn-primary">Solicitar diagnóstico gratuito →</a>
           <a href="#demo-crm" class="btn btn-ghost">Ver demostración del CRM</a>
         </div>
         <div class="hero-benefits">
@@ -579,7 +573,7 @@
           <pre>Hola, vi tu página y me interesa agendar una cita de manicure esta semana. ¿Tienes disponibilidad el jueves en la tarde?</pre>
         </div>
         <div class="operations-actions" style="margin-top:20px;">
-          <a href="#diagnosticForm" class="btn btn-turq" data-capture-cta="Cotizar mi landing" data-capture-service="Landing page">Cotizar mi landing →</a>
+          <a href="https://wa.me/51936554768?text=Hola%20Runner%2C%20quiero%20cotizar%20una%20landing%20page%20para%20mi%20negocio." class="btn btn-turq">Cotizar mi landing →</a>
         </div>
       </div>
     </div>
@@ -646,7 +640,7 @@
           <strong>Importante:</strong> los mensajes de WhatsApp se preparan automáticamente, pero su envío debe confirmarse manualmente. No requiere WhatsApp Business API, chatbot ni pagos integrados.
         </div>
         <div class="operations-actions">
-          <a href="#diagnosticForm" class="btn btn-primary" data-capture-cta="Cotizar mi CRM" data-capture-service="CRM Google Sheets">Cotizar mi CRM →</a>
+          <a href="https://wa.me/51936554768?text=Hola%20Runner%2C%20quiero%20cotizar%20el%20sistema%20de%20gesti%C3%B3n%20(CRM)%20para%20mi%20negocio." class="btn btn-primary">Cotizar mi CRM →</a>
           <span class="operations-note">Implementación adaptada al flujo real de cada negocio.</span>
         </div>
         <p class="note-box"><strong>Para consultorios:</strong> Runner organiza citas y seguimiento administrativo. No sustituye una historia clínica ni un sistema médico especializado.</p>
@@ -760,7 +754,7 @@
       </div>
 
       <div class="operations-actions" style="margin-top:36px;">
-        <a href="#diagnosticForm" class="btn btn-turq" data-capture-cta="Demo: quiero esto en mi negocio" data-capture-service="CRM Google Sheets">Quiero esto en mi negocio →</a>
+        <a href="https://wa.me/51936554768?text=Hola%20Runner%2C%20vi%20la%20demostraci%C3%B3n%20del%20CRM%20y%20quiero%20probarlo%20en%20mi%20negocio." class="btn btn-turq">Quiero esto en mi negocio →</a>
         <span class="operations-note">Esta demo no se conecta todavía con tu base real de clientes.</span>
       </div>
     </div>
@@ -845,21 +839,21 @@
           <h4>Landing Esencial</h4>
           <p class="price">Desde S/ 390</p>
           <p>Presencia esencial, adaptación a celular, botón de WhatsApp y QR listo para compartir.</p>
-          <a href="#diagnosticForm" class="btn btn-ghost btn-sm" style="border-color:#C7A669; color:#7A5A20;" data-capture-cta="Precio: Landing Esencial" data-capture-service="Landing page">Consultar →</a>
+          <a href="https://wa.me/51936554768?text=Hola%20Runner%2C%20quiero%20cotizar%20la%20Landing%20Esencial%20para%20mi%20negocio." class="btn btn-ghost btn-sm" style="border-color:#C7A669; color:#7A5A20;">Consultar →</a>
         </div>
         <div class="price-card featured">
           <span class="km">Nivel 2</span>
           <h4>Landing Profesional</h4>
           <p class="price">Desde S/ 790</p>
           <p>Varias secciones, galería, Google Maps, formulario, QR, SEO local básico y soporte inicial.</p>
-          <a href="#diagnosticForm" class="btn btn-ghost btn-sm" style="border-color:#C7A669; color:#7A5A20;" data-capture-cta="Precio: Landing Profesional" data-capture-service="Landing page">Consultar →</a>
+          <a href="https://wa.me/51936554768?text=Hola%20Runner%2C%20quiero%20cotizar%20la%20Landing%20Profesional%20para%20mi%20negocio." class="btn btn-ghost btn-sm" style="border-color:#C7A669; color:#7A5A20;">Consultar →</a>
         </div>
         <div class="price-card">
           <span class="km">Nivel 3</span>
           <h4>Landing + CRM Runner</h4>
           <p class="price">Desde S/ 1,490</p>
           <p>Solución completa: landing, QR, WhatsApp y CRM semiautomático coordinados con tu operación diaria. La integración automática, si se requiere, se evalúa por separado.</p>
-          <a href="#diagnosticForm" class="btn btn-ghost btn-sm" style="border-color:#C7A669; color:#7A5A20;" data-capture-cta="Precio: Landing + CRM" data-capture-service="Landing + QR + WhatsApp + CRM">Consultar →</a>
+          <a href="https://wa.me/51936554768?text=Hola%20Runner%2C%20quiero%20informaci%C3%B3n%20sobre%20la%20soluci%C3%B3n%20completa%3A%20landing%20%2B%20CRM." class="btn btn-ghost btn-sm" style="border-color:#C7A669; color:#7A5A20;">Consultar →</a>
         </div>
       </div>
 
@@ -919,8 +913,8 @@
           <p>Sí. No necesitas ninguna app especial ni número dedicado: funciona con el WhatsApp que ya usas hoy.</p>
         </article>
         <article class="faq-item reveal">
-          <h3>¿Esta landing registra automáticamente los prospectos en el CRM?</h3>
-          <p>Sí. Este formulario de diagnóstico registra tu solicitud en el CRM de Google Sheets con tu consentimiento, antes de abrir WhatsApp con el mismo código RUN. Tú revisas el mensaje y presionas “Enviar”. Registrar un prospecto no confirma ni reserva una cita; eso lo realiza la persona encargada.</p>
+          <h3>¿La landing registra sola las citas en el CRM?</h3>
+          <p>No en la versión básica. La landing prepara la consulta y la persona encargada registra o confirma la cita. Cualquier integración adicional se revisa y cotiza por separado.</p>
         </article>
         <article class="faq-item reveal">
           <h3>¿Puede utilizarlo otra persona de mi equipo?</h3>
@@ -936,7 +930,7 @@
         </article>
         <article class="faq-item reveal">
           <h3>¿La información de mis clientes está protegida?</h3>
-          <p>El formulario de diagnóstico envía los datos de tu solicitud al CRM de Runner mediante Google Apps Script, con tu consentimiento, para atenderte y dar seguimiento. La demostración del CRM usa información ficticia en memoria y permanece separada del registro real. No compartas contraseñas ni datos sensibles.</p>
+          <p>Se usan enlaces seguros y no se solicitan credenciales ni datos sensibles. La demostración de este sitio usa únicamente información ficticia.</p>
         </article>
         <article class="faq-item reveal">
           <h3>¿Runner sustituye un sistema médico?</h3>
@@ -950,13 +944,12 @@
           <li>La demostración del CRM en esta página usa datos ficticios y no registra información real.</li>
           <li>No se deben registrar datos de salud dentro de la demostración.</li>
           <li>Los enlaces externos de este sitio usan <code>rel="noopener"</code> para tu seguridad.</li>
-          <li>El diagnóstico solicita tu nombre o negocio, WhatsApp, rubro, servicio de interés y necesidad, con tu consentimiento para el registro y seguimiento.</li>
-          <li>Tu solicitud se registra en el CRM aunque decidas no enviar el mensaje por WhatsApp. No se envían mensajes automáticamente.</li>
+          <li>Runner no solicita credenciales, tokens ni números reales de clientes a través de este sitio.</li>
           <li>Antes de implementar tu sistema, se conversa contigo el consentimiento y tratamiento de los datos de tu negocio.</li>
         </ul>
         <details class="privacy-details">
           <summary>Leer política de privacidad básica</summary>
-          <p>La demo funciona únicamente en la memoria de tu navegador y se reinicia al recargar; no envía sus datos al CRM real. Al enviar el formulario de diagnóstico con tu consentimiento, Runner registra tu nombre o negocio, WhatsApp, rubro, servicio de interés y necesidad en su CRM de Google Sheets mediante Google Apps Script. También registra el código de solicitud, fecha, consentimiento y origen comercial (página, campaña y botón) para atender tu consulta, elaborar una propuesta y dar seguimiento al servicio solicitado. Este registro ocurre antes de abrir WhatsApp y permanece aunque no envíes el mensaje. WhatsApp recibe el mensaje cuando decides presionar “Enviar”; funciona mediante wa.me, sin API. El formulario no guarda copias de tus datos en el almacenamiento del navegador. Para solicitar la corrección o eliminación de tu solicitud, contacta a Runner al 936 554 768 indicando su código. No compartas contraseñas, datos de salud ni información sensible. Cada negocio que use su propio CRM es responsable de administrar accesos, permisos y consentimiento de sus clientes.</p>
+          <p>La demo funciona únicamente en la memoria de tu navegador y se reinicia al recargar; no envía ni almacena los datos escritos. El formulario de diagnóstico solo prepara un texto: la información pasa a WhatsApp cuando decides abrir la aplicación y presionar “Enviar”. Runner utilizará los datos que compartas para responder tu consulta, elaborar una propuesta y dar seguimiento al servicio solicitado. No se deben compartir contraseñas, datos de salud ni información sensible. Cada negocio que use su propio CRM es responsable de administrar accesos, permisos y consentimiento de sus clientes.</p>
         </details>
       </div>
     </div>
@@ -971,20 +964,17 @@
       <div class="reveal">
         <p class="eyebrow" style="color:var(--gold-soft)"><span class="dot"></span>CONTACTO</p>
         <h2>Descubre qué parte de tu negocio puedes ordenar primero.</h2>
-        <p class="lede">Completa tu diagnóstico breve. Revisaré cómo ayudarte a captar consultas y ordenar reservas, clientes y seguimientos.</p>
-        <p class="diagnostic-note">Con tu consentimiento, tu solicitud se registra primero en el CRM. Después se abre WhatsApp con tu código RUN; el envío del mensaje es manual.</p>
+        <p class="lede">Escríbeme por WhatsApp con tu rubro y objetivo. Revisaré cómo ayudarte a captar consultas y ordenar reservas, clientes y seguimientos.</p>
+        <p class="diagnostic-note">Puedes escribir directamente al 936 554 768 o completar el diagnóstico breve. Nada se envía automáticamente.</p>
       </div>
       <form class="diagnostic-form reveal" id="diagnosticForm">
-        <h3>Registra tu diagnóstico gratuito</h3>
-        <p class="form-help">Completa los cinco campos obligatorios. Primero registramos tu solicitud; después revisas y envías el mensaje por WhatsApp.</p>
-        <label>Nombre o negocio *
-          <input type="text" id="diagnosticName" name="nombre" maxlength="70" autocomplete="organization" placeholder="Ej.: Spa Aurora" required>
+        <h3>Prepara tu diagnóstico gratuito</h3>
+        <p class="form-help">Completa tres datos y Runner abrirá WhatsApp con tu solicitud lista para revisar.</p>
+        <label>Nombre o negocio
+          <input type="text" id="diagnosticName" maxlength="70" autocomplete="organization" placeholder="Ej.: Spa Aurora" required>
         </label>
-        <label>WhatsApp *
-          <input type="tel" id="diagnosticPhone" name="telefono" inputmode="tel" autocomplete="tel" maxlength="20" placeholder="Ej.: 987654321 o +51 987654321" required>
-        </label>
-        <label>Rubro *
-          <select id="diagnosticSector" name="rubro" required>
+        <label>Rubro
+          <select id="diagnosticSector" required>
             <option value="">Selecciona una opción</option>
             <option>Salón de belleza</option>
             <option>Spa o masoterapia</option>
@@ -993,41 +983,20 @@
             <option>Barbería</option>
             <option>Consultorio</option>
             <option>Otro negocio por cita</option>
-            <option>Gastronomía</option>
-            <option>Comercio / tienda</option>
-            <option>Servicios profesionales</option>
-            <option>Hogar / mantenimiento</option>
-            <option>Educación</option>
-            <option>Turismo / hospedaje</option>
-            <option>Otro negocio / servicio</option>
           </select>
         </label>
-        <label>Servicio de interés *
-          <select id="diagnosticService" name="servicio" required>
-            <option value="">Selecciona una opción</option>
-            <option>Landing page</option>
-            <option>QR + WhatsApp sin API</option>
-            <option>CRM Google Sheets</option>
-            <option>QR + WhatsApp + CRM</option>
-            <option>Landing + QR + WhatsApp + CRM</option>
-            <option>Mejora de landing o CRM existente</option>
-            <option>Otro servicio digital</option>
-          </select>
-        </label>
-        <label>Necesidad: ¿qué necesitas lograr? *
-          <textarea id="diagnosticGoal" name="objetivo" maxlength="400" placeholder="Ej.: captar consultas, organizar citas y evitar horarios cruzados" required></textarea>
+        <label>¿Qué necesitas ordenar primero?
+          <textarea id="diagnosticGoal" maxlength="300" placeholder="Ej.: captar consultas, organizar citas y evitar horarios cruzados" required></textarea>
         </label>
         <label class="diagnostic-consent">
           <input type="checkbox" id="diagnosticConsent" required>
-          <span>Acepto que Runner registre estos datos en su CRM de Google Sheets para atender mi solicitud, preparar una propuesta y dar seguimiento al servicio consultado. Entiendo que el registro ocurre aunque no envíe el mensaje por WhatsApp y que debo pulsar “Enviar” manualmente. Puedo solicitar la corrección o eliminación de mis datos contactando a Runner.</span>
+          <span>Acepto que estos datos se incluyan en el mensaje que revisaré y enviaré manualmente por WhatsApp.</span>
         </label>
-        <button type="submit" class="btn btn-primary" id="diagnosticSubmit">Registrar y continuar por WhatsApp →</button>
-        <p id="diagnosticStatus" class="diagnostic-status" role="status" aria-live="polite" aria-atomic="true"></p>
-        <a id="diagnosticWhatsApp" class="btn btn-primary" target="_blank" rel="noopener noreferrer" hidden>Abrir WhatsApp con mi solicitud →</a>
-        <p class="diagnostic-note">WhatsApp sin API. El registro no envía mensajes ni confirma una cita. Tú revisas el texto y presionas “Enviar”.</p>
+        <button type="submit" class="btn btn-primary">Preparar mensaje en WhatsApp →</button>
+        <p class="diagnostic-note">No requiere API. Al continuar se abre WhatsApp; tú decides si presionas “Enviar”.</p>
       </form>
       <div class="contact-block reveal" style="grid-column:1/-1;">
-        <div class="contact-line"><span class="label">WhatsApp</span><a href="#diagnosticForm" data-capture-cta="Contacto: WhatsApp">936 554 768</a></div>
+        <div class="contact-line"><span class="label">WhatsApp</span><a href="https://wa.me/51936554768">936 554 768</a></div>
         <div class="contact-line"><span class="label">Pago</span><span style="color:var(--text-strong); font-weight:600;">Yape / Plin al confirmar</span></div>
       </div>
     </div>
@@ -1044,7 +1013,7 @@
   <span class="music-label" id="musicLabel">Activar música</span>
 </button>
 
-<a class="wa-float" href="#diagnosticForm" rel="noopener" aria-label="Registrar consulta y continuar por WhatsApp" data-capture-cta="Botón flotante: WhatsApp">
+<a class="wa-float" href="https://wa.me/51936554768?text=Hola%20Runner%2C%20quiero%20mejorar%20la%20captaci%C3%B3n%20y%20gesti%C3%B3n%20de%20mi%20negocio." target="_blank" rel="noopener" aria-label="Escríbenos por WhatsApp">
   <span class="ring"></span>
   <svg viewBox="0 0 32 32" fill="#fff"><path d="M16 2C8.3 2 2 8.3 2 16c0 2.8.8 5.5 2.3 7.8L2 30l6.4-2.3c2.2 1.3 4.8 2 7.6 2 7.7 0 14-6.3 14-14S23.7 2 16 2zm0 25.5c-2.4 0-4.7-.7-6.6-1.9l-.5-.3-4.2 1.5 1.5-4.1-.3-.5C4.6 20.4 4 18.2 4 16 4 9.4 9.4 4 16 4s12 5.4 12 12-5.4 11.5-12 11.5zm6.6-8.7c-.4-.2-2.1-1-2.4-1.2-.3-.1-.5-.2-.8.2-.2.3-.9 1.2-1.1 1.4-.2.2-.4.3-.7.1-.4-.2-1.6-.6-3-1.9-1.1-1-1.9-2.2-2.1-2.6-.2-.4 0-.6.2-.7.2-.2.4-.4.6-.7.2-.2.3-.4.4-.6.1-.3 0-.5 0-.7-.1-.2-.8-2-1.1-2.7-.3-.7-.6-.6-.8-.6h-.7c-.2 0-.6.1-.9.4-.3.3-1.2 1.2-1.2 2.9s1.3 3.4 1.4 3.6c.2.2 2.6 4 6.2 5.5.9.4 1.6.6 2.1.8.9.3 1.7.2 2.3.1.7-.1 2.1-.9 2.4-1.7.3-.8.3-1.5.2-1.7-.1-.1-.3-.2-.6-.4z"/></svg>
 </a>
@@ -1163,150 +1132,22 @@
     musicControl.setAttribute('aria-label', 'Reanudar música de fondo');
   }
 
-  // Captación real. La demo inferior permanece independiente y solo usa memoria.
-  const RUNNER_CAPTURE = Object.freeze({
-    endpoint: 'https://script.google.com/macros/s/AKfycbyDVAY7MBQrGnwFHIVBrR_RFLBU0r-AhrCnxRPRj_iM6pKq0Pa_gCVogY7_1ynVX_9Kdw/exec',
-    whatsapp: '51936554768',
-    version: 'RUNNER Captación v1'
-  });
+  // Diagnóstico: prepara el texto y abre WhatsApp; nunca lo envía automáticamente.
   const diagnosticForm = document.getElementById('diagnosticForm');
-  const diagnosticSubmit = document.getElementById('diagnosticSubmit');
-  const diagnosticStatus = document.getElementById('diagnosticStatus');
-  const diagnosticWhatsApp = document.getElementById('diagnosticWhatsApp');
-  const diagnosticService = document.getElementById('diagnosticService');
-  let captureBusy = false;
-  let captureFinished = false;
-  let captureCTA = 'Formulario diagnóstico';
-
-  document.querySelectorAll('[data-capture-cta]').forEach(link => {
-    link.addEventListener('click', () => {
-      if (captureBusy || captureFinished) return;
-      captureCTA = link.dataset.captureCta;
-      if (link.dataset.captureService) diagnosticService.value = link.dataset.captureService;
-    });
-  });
-
-  function captureStatus(text, type) {
-    diagnosticStatus.textContent = text;
-    diagnosticStatus.className = 'diagnostic-status show ' + type;
-  }
-
-  function capturePhone(value) {
-    const digits = value.replace(/[\s()+.-]/g, '');
-    if (/^9\d{8}$/.test(digits)) return '51' + digits;
-    if (/^519\d{8}$/.test(digits)) return digits;
-    return '';
-  }
-
-  // Conserva el formato RUN de la prueba ya validada; el mismo ID viaja al CRM.
-  function captureId() {
-    const parts = Object.fromEntries(new Intl.DateTimeFormat('en-GB', {
-      timeZone: 'America/Lima', year: 'numeric', month: '2-digit', day: '2-digit',
-      hour: '2-digit', minute: '2-digit', second: '2-digit', hourCycle: 'h23'
-    }).formatToParts(new Date()).map(part => [part.type, part.value]));
-    const random = new Uint32Array(1);
-    crypto.getRandomValues(random);
-    return 'RUN-' + parts.year + parts.month + parts.day + '-' +
-      parts.hour + parts.minute + parts.second + '-' + random[0].toString(36).toUpperCase();
-  }
-
-  async function registerCapture(payload) {
-    const controller = new AbortController();
-    const timeout = setTimeout(() => controller.abort(), 30000);
-    try {
-      // Una sola petición. No usar no-cors: una respuesta opaca no confirma el CRM.
-      const response = await fetch(RUNNER_CAPTURE.endpoint, {
-        method: 'POST', mode: 'cors', credentials: 'omit', redirect: 'follow',
-        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
-        body: JSON.stringify(payload), signal: controller.signal
-      });
-      if (!response.ok) throw new Error('CRM_UNCONFIRMED');
-      const result = await response.json();
-      if (!result || result.ok !== true) throw new Error('CRM_UNCONFIRMED');
-      // Si el servidor devuelve el ID, ese es el código que usará WhatsApp.
-      const id = result.id === undefined ? payload.id : result.id;
-      if (typeof id !== 'string' || !/^RUN-[A-Z0-9-]{1,80}$/.test(id)) {
-        throw new Error('CRM_UNCONFIRMED');
-      }
-      return id;
-    } finally {
-      clearTimeout(timeout);
-    }
-  }
-
-  diagnosticForm.addEventListener('submit', async (event) => {
+  diagnosticForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    if (captureBusy || captureFinished) return;
     if (!diagnosticForm.reportValidity()) return;
     const name = document.getElementById('diagnosticName').value.trim();
-    const phone = capturePhone(document.getElementById('diagnosticPhone').value.trim());
     const sector = document.getElementById('diagnosticSector').value;
-    const service = diagnosticService.value;
     const goal = document.getElementById('diagnosticGoal').value.trim();
-    if (!name || !goal || !sector || !service || !document.getElementById('diagnosticConsent').checked) {
-      captureStatus('Completa todos los campos y acepta el registro y seguimiento de tu solicitud.', 'error');
-      return;
-    }
-    if (!phone) {
-      captureStatus('Revisa tu WhatsApp: usa un celular peruano de 9 dígitos que empiece con 9, con o sin +51.', 'error');
-      document.getElementById('diagnosticPhone').focus();
-      return;
-    }
-    const query = new URLSearchParams(location.search);
-    const payload = {
-      id: captureId(), nombre: name, telefono: phone, rubro: sector,
-      servicio: service, objetivo: goal, consentimiento: true,
-      origen: (query.get('utm_source') || query.get('source') || 'Runner Landing').slice(0, 100),
-      campana: (query.get('utm_campaign') || query.get('campaign') || '').slice(0, 100),
-      cta: captureCTA, urlOrigen: location.origin + location.pathname,
-      version: RUNNER_CAPTURE.version
-    };
-    captureBusy = true;
-    diagnosticSubmit.disabled = true;
-    diagnosticSubmit.textContent = 'Registrando solicitud…';
-    diagnosticForm.setAttribute('aria-busy', 'true');
-    captureStatus('Registrando tu solicitud en el CRM antes de abrir WhatsApp…', '');
-    // Reserva una pestaña durante el clic para evitar el bloqueo de ventanas.
-    // No se navega a WhatsApp hasta recibir la confirmación del CRM.
-    let pendingTab = null;
-    try {
-      pendingTab = window.open('about:blank', '_blank');
-      if (pendingTab) pendingTab.opener = null;
-    } catch (error) { /* El enlace posterior permite abrir WhatsApp manualmente. */ }
-    try {
-      const id = await registerCapture(payload);
-      const message = [
-        'Hola Runner, quiero solicitar un diagnóstico gratuito.',
-        'Código: ' + id,
-        'Nombre o negocio: ' + name,
-        'WhatsApp: ' + phone,
-        'Rubro: ' + sector,
-        'Servicio de interés: ' + service,
-        'Necesidad: ' + goal,
-        'Entiendo que debo revisar y presionar Enviar manualmente.'
-      ].join('\n');
-      const url = 'https://wa.me/' + RUNNER_CAPTURE.whatsapp + '?text=' + encodeURIComponent(message);
-      diagnosticWhatsApp.href = url;
-      diagnosticWhatsApp.hidden = false;
-      captureFinished = true;
-      diagnosticSubmit.textContent = 'Solicitud registrada ✓';
-      captureStatus('Solicitud registrada en el CRM. Código: ' + id +
-        '. Revisa el mensaje en WhatsApp y pulsa “Enviar”. Si no se abrió, usa el botón de abajo.', 'ok');
-      diagnosticForm.querySelectorAll('input, select, textarea').forEach(control => { control.disabled = true; });
-      if (pendingTab && !pendingTab.closed) {
-        try { pendingTab.location.replace(url); } catch (error) { /* Enlace visible como alternativa. */ }
-      }
-    } catch (error) {
-      if (pendingTab && !pendingTab.closed) pendingTab.close();
-      diagnosticSubmit.textContent = 'Registro pendiente de verificación';
-      captureStatus('No pudimos confirmar el registro. Código de solicitud: ' + payload.id +
-        '. No reenvíes el formulario: podría haberse registrado. Contacta a Runner al 936 554 768 con este código para verificarlo. WhatsApp no se abrió.', 'error');
-      // No reintentar una escritura incierta: evita duplicados tras un fallo de red/CORS.
-      captureFinished = true;
-    } finally {
-      captureBusy = false;
-      diagnosticForm.setAttribute('aria-busy', 'false');
-    }
+    const message = [
+      'Hola Runner, quiero solicitar un diagnóstico gratuito.',
+      'Nombre o negocio: ' + name,
+      'Rubro: ' + sector,
+      'Necesidad principal: ' + goal,
+      'Entiendo que debo revisar y presionar Enviar manualmente.'
+    ].join('\n');
+    window.open('https://wa.me/51936554768?text=' + encodeURIComponent(message), '_blank', 'noopener');
   });
 
   // ------------------------------------------------------------------
