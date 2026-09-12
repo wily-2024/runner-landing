@@ -23,7 +23,7 @@ El cliente propone un código `RUN-fecha-hora-aleatorio`, con fecha y hora de Li
 | `urlOrigen` | Origen y ruta; no se transmite la cadena completa de parámetros |
 | `version` | RUNNER Captación v1 |
 
-Se mantienen los nombres de campos usados por `captacion-prueba.html`. No se modificó el Apps Script ni su despliegue. La lectura GET del endpoint devolvió `{"ok":true,"system":"RUNNER Captación v1"}`; tanto la redirección como la respuesta final GET incluyen `Access-Control-Allow-Origin: *`. Esto comprueba la disponibilidad y la lectura GET, pero no valida el contrato ni CORS de POST.
+Se mantienen los nombres de campos usados por `captacion-prueba.html`. No se modificó el Apps Script ni su despliegue. GET devuelve `{"ok":true,"system":"RUNNER Captación v1"}`. Tras autorización específica del titular, se realizó una única petición POST de prueba con Origin de GitHub Pages: respondió HTTP 200 en 21,38 segundos, con JSON `ok: true` e `id` idéntico al enviado. Tanto la redirección como la respuesta final POST incluyen `Access-Control-Allow-Origin: *`. La lectura del CRM confirmó una sola fila nueva y los campos esperados. Se comprobó el mensaje generado por el código del formulario utilizando esa respuesta real, sin repetir la petición ni enviar el mensaje. La petición real se efectuó mediante cliente HTTP; no se afirma que sea una prueba de envío desde la interfaz del navegador.
 
 ## Fallos y duplicados
 
@@ -37,12 +37,13 @@ La política y el consentimiento explican que el CRM registra la solicitud antes
 
 No se cambiaron URL pública, canonical, robots, sitemap, verificación de Search Console, título, metadatos principales, imágenes, música, estilos existentes ni código de la demo. Se actualizó únicamente la pregunta de FAQ estructurada correspondiente a la captación, junto con su respuesta visible. La rama y `captacion-prueba.html` se conservan. `runner-captacion.css`, añadido previamente en la rama, permanece intacto y no se enlaza para no alterar el diseño existente.
 
-## Validación y condición de fusión
+## Validación
 
 - `node --test tests/captacion.test.cjs`: siete pruebas exitosas con CRM simulado. Cubren preservación, datos enviados, código compartido, orden de acciones, consentimiento, teléfonos, ventanas bloqueadas, errores y doble clic.
 - El HTML se verifica para IDs únicos, destinos existentes de los CTA y los seis controles obligatorios.
-- La lectura del CRM real confirmó el registro de prueba anterior. Este trabajo no creó nuevas filas.
-- La vista previa local fue bloqueada por la política del navegador; no se completó QA visual de la edición.
-- La revisión automática bloqueó la prueba POST con el teléfono de Runner por falta de autorización específica para el dato de prueba. No se fusionó a main.
+- La lectura del CRM real confirmó exactamente una nueva fila identificada como PRUEBA TÉCNICA — NO CONTACTAR. El titular autorizó específicamente el uso de su número. El registro permanece como evidencia; no se enviaron mensajes ni se eliminó información.
+- El mensaje generado utiliza el ID confirmado en esa fila y recuerda que Enviar se pulsa manualmente.
+- Los dos botones del formulario permiten saltos de línea para que su nuevo texto quepa en pantallas pequeñas. Los estilos y media queries originales permanecen intactos.
+- La política del navegador bloqueó la vista previa local. La revisión visual de la página publicada se realiza después del despliegue; no se afirma una prueba visual del formulario en una vista previa ni una emulación móvil.
 
-Antes de fusionar, autorizar y efectuar una única solicitud identificada como prueba en el CRM real, leer la respuesta POST desde un origen web, verificar la fila con el mismo ID que WhatsApp, y comprobar el formulario en celular y escritorio. No enviar el mensaje por WhatsApp. Si todo es correcto, fusionar conservando la rama y comprobar la publicación de GitHub Pages en la URL existente.
+La prueba real, la validación del mensaje y las pruebas automáticas permiten fusionar la integración conservando la rama. Después se comprueba la publicación de GitHub Pages y el formulario en la URL existente, sin crear un segundo prospecto. Los fallos de red quedan cubiertos por pruebas simuladas; no se modifica ni se vuelve a desplegar Apps Script.

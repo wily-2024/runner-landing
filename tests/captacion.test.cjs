@@ -60,7 +60,7 @@ test('protect SEO principal, imágenes, estilos existentes y demo', () => {
   assert.deepEqual(images(html), images(baseline));
   const css = s => s.match(/<style>([\s\S]*?)<\/style>/)[1];
   const originalCSS = css(html).split('\n').filter(line =>
-    !/^  (?:\.diagnostic-status|\.diagnostic-form \.btn:disabled|#diagnosticWhatsApp\[hidden\])/.test(line)
+    !/^  (?:\.diagnostic-status|\.diagnostic-form \.btn:disabled|#diagnosticWhatsApp\[hidden\]|\.diagnostic-form #diagnosticSubmit)/.test(line)
   ).join('\n');
   assert.equal(originalCSS, css(baseline));
   const demo = s => s.split('// SECCIÓN 5: DEMOSTRACIÓN INTERACTIVA DEL CRM')[1];
